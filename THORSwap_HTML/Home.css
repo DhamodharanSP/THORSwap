@@ -1,0 +1,18 @@
+.nav {
+    display : flex;
+    justify-content: space-between  ;
+
+}
+
+.home {
+    background: linear-gradient(linear-gradient(to right, #0f172a, #1e293b ));
+}
+
+.logo {
+    height: 64;
+    width: 64;
+}
+
+.decenter {
+    color: blue;
+}
