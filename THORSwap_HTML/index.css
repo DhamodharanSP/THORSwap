@@ -14,6 +14,7 @@
     --dark-border: #1f263d;
     --text-light: #ffffff;
     --text-gray: #8c9db3;
+    --cool : linear-gradient(90deg, #0051fe, #00BCD4);
     
 }
 
@@ -23,6 +24,36 @@
     text-shadow: 2px #4dd0e1;
 }
 
+.cools {
+    background: var(--cool);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.second_page {
+    display: flex;
+    margin-left : auto;
+    margin-right : auto;
+}
+
+.two {
+    background: url('./assets/images/p2bg.jpeg') no-repeat center center/cover;
+}
+
+.img1 {
+    width: 600px;
+    height: 400px;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.img2 {
+    width : 300px;
+    height : 180px;
+    border-radius: 20px;
+    margin: 20px;
+
+}
 
 body {
     background-color: var(--dark-bg);
@@ -78,43 +109,65 @@ header {
     font-size: 2rem;
 }
 
-/* Search Bar */
-    .search-container {
-      display: flex;
-      align-items: center;
-      background: linear-gradient(90deg, #2d3e50, #1a2332);
-      border-radius: 40px;
-      padding: 10px 20px;
-      width: 400px;
-      max-width: 90%;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    margin: 30px auto 40px auto; /* Center and add vertical spacing */
+    position: relative;
+    border-radius: 50px;
+    background-color: rgba(20, 24, 43, 0.6); /* Slightly darker, semi-transparent background */
+    border: 2px solid transparent; /* Start with transparent border */
+    background-clip: padding-box;
+    transition: all 0.3s ease;
+}
 
-    .search-container input {
-      flex: 1;
-      border: none;
-      outline: none;
-      background: transparent;
-      color: white;
-      font-size: 16px;
-    }
+/* Gradient border effect */
+.search-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    padding: 2px; /* Control the border thickness */
+    background: linear-gradient(90deg, #8A2BE2, #00BCD4, #00E6B3); /* Gradient colors from your image */
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
 
-    .search-container input::placeholder {
-      color: #cfcfcf;
-    }
+.search-input {
+    flex-grow: 1;
+    padding: 15px 25px;
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 1rem;
+    outline: none;
+    border-radius: 50px; /* Match container border-radius */
+}
 
-    .search-container button {
-      background: transparent;
-      border: none;
-      cursor: pointer;
-    }
+.search-input::placeholder {
+    color: var(--text-gray);
+    opacity: 0.8;
+}
 
-    .search-container button svg {
-      fill: #4dd0e1;
-      width: 22px;
-      height: 22px;
-    }
+.search-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-gray);
+    font-size: 1.2rem;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
 
+.search-btn:hover {
+    color: var(--primary);
+}
 
 nav ul {
     display: flex;
@@ -246,7 +299,7 @@ nav a:hover {
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     margin-top: 40px;
 }
